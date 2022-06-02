@@ -87,7 +87,7 @@ locationButton.addEventListener("click", showCurrentLocation);
 let fahrenheitSign = document.querySelector("#fahrenheitSign");
 fahrenheitSign.addEventListener("click", showFahrenheitTemperature);
 
-let celsiustSign = document.querySelector("#celsiustSign");
-celsiustSign.addEventListener("click", showCelsiusTemperature);
+let celsiusSign = document.querySelector("#celsiusSign");
+celsiusSign.addEventListener("click", showCelsiusTemperature);
 
 searchCity("Kyiv");

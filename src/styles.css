@@ -125,10 +125,15 @@ img#icon {
 .units {
   position: relative;
   top: -110px;
-  left: 103px;
+  left: 99px;
   font-size: 12px;
 }
-.units a#celsiustSign {
+.units a#celsiusSign {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+.units a#celsiusSign:hover {
   text-decoration: none;
 }
 .units a#fahrenheitSign {
