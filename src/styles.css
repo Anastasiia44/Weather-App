@@ -114,14 +114,18 @@ button#locationButton {
 }
 .current_weather_temp {
   position: relative;
-  top: -34px;
-  left: 50px;
-  font-size: 30px;
+  top: -60px;
+  left: 63px;
+  font-size: 34px;
+}
+img#icon {
+  width: 70px;
+  height: 70px;
 }
 .units {
   position: relative;
-  top: -78px;
-  left: 85px;
+  top: -110px;
+  left: 99px;
   font-size: 12px;
 }
 .units a#fahrenheitSign {
@@ -131,6 +135,10 @@ button#locationButton {
   font-size: 16px;
   font-weight: 100;
   line-height: 20px;
+}
+
+div#humidity {
+  padding-top: 14px;
 }
 .col-sm-6 {
   flex: 0 0 50%;
