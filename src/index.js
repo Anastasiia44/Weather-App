@@ -1,26 +1,25 @@
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${day}, ${hours}:${minutes}`;
+let now = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
 }
 
+let date = document.querySelector("#now");
+date.innerHTML = `${day}, ${hours}:${minutes}`;
 function showWeather(response) {
   console.log(response);
   document.querySelector("#currentCity").innerHTML = response.data.name;
@@ -35,9 +34,7 @@ function showWeather(response) {
   )} km/h`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
-  document.querySelector("#now").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
