@@ -1,0 +1,167 @@
+.container {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.weather_container {
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(8, 0, 0, 0.884), 0 0 0 1px rgba(0, 0, 0, 0.986);
+  margin: 10px 5px;
+  max-width: 650px;
+  padding: 20px;
+}
+header {
+  display: block;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+a#Kyiv {
+  text-decoration: none;
+  color: rgb(125, 93, 155);
+  font-weight: bold;
+}
+a#Kyiv:hover {
+  color: rgb(22, 41, 77);
+  cursor: pointer;
+}
+a#London {
+  text-decoration: none;
+  color: rgb(125, 93, 155);
+  font-weight: bold;
+}
+a#London:hover {
+  color: rgb(22, 41, 77);
+  cursor: pointer;
+}
+a#Berlin {
+  text-decoration: none;
+  color: rgb(125, 93, 155);
+  font-weight: bold;
+}
+a#Berlin:hover {
+  color: rgb(22, 41, 77);
+  cursor: pointer;
+}
+a#Paris {
+  text-decoration: none;
+  color: rgb(125, 93, 155);
+  font-weight: bold;
+}
+a#Paris:hover {
+  color: rgb(22, 41, 77);
+  cursor: pointer;
+}
+.cities {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+  text-decoration: none;
+}
+.city {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+button#search-button {
+  color: black;
+  position: relative;
+  font-size: 17px;
+  box-shadow: 5px 5px 5px rgb(216, 213, 213);
+  border: 1px solid #212224;
+  transition: all 200ms linear;
+}
+button#locationButton {
+  display: block;
+  position: relative;
+  color: white;
+  background-color: rgb(125, 93, 155);
+  font-size: 17px;
+  border: 1px solid #212224;
+  transition: all 200ms linear;
+  left: 290px;
+  top: -30px;
+}
+.current_weater_info {
+  float: right;
+  font-size: 20px;
+  font-weight: normal;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+.weather_space {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.current_weather_emoji {
+  position: relative;
+}
+.current_weather_temp {
+  position: relative;
+  top: -34px;
+  left: 50px;
+  font-size: 30px;
+}
+.special_temp_sign {
+  position: relative;
+  top: -78px;
+  left: 80px;
+  font-size: 30px;
+}
+.current_weather_details {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 20px;
+}
+.col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.bottom_line {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.col-sm-2 {
+  flex: 0 0 17%;
+  max-width: 17%;
+}
+.forecast_day {
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+.forecast_emoji {
+  text-align: center;
+  margin: 10px 0 0;
+}
+.forecast_temp {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15px;
+}
+.link-to-gitHub {
+  padding-left: 3px;
+  font-size: 14px;
+}
+a#gitHubLink {
+  color: rgb(125, 93, 155);
+  text-decoration: none;
+}
+a#gitHubLink:hover {
+  color: rgb(22, 41, 77);
+}
