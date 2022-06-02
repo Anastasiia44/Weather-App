@@ -34,6 +34,7 @@ function showWeather(response) {
   )} km/h`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  celsiusTemperature = response.data.main.temp;
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -65,11 +66,28 @@ function showCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector("#temp").innerHTML = Math.round(fahrenheitTemp);
+}
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  document.querySelector("#temp").innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", citySubmit);
 
 let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", showCurrentLocation);
+
+let fahrenheitSign = document.querySelector("#fahrenheitSign");
+fahrenheitSign.addEventListener("click", showFahrenheitTemperature);
+
+let celsiustSign = document.querySelector("#celsiustSign");
+celsiustSign.addEventListener("click", showCelsiusTemperature);
 
 searchCity("Kyiv");

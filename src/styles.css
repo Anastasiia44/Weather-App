@@ -125,8 +125,11 @@ img#icon {
 .units {
   position: relative;
   top: -110px;
-  left: 99px;
+  left: 103px;
   font-size: 12px;
+}
+.units a#celsiustSign {
+  text-decoration: none;
 }
 .units a#fahrenheitSign {
   text-decoration: none;
