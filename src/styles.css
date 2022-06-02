@@ -17,6 +17,9 @@ header {
   box-sizing: border-box;
   line-height: 1.5;
 }
+a {
+  text-decoration: none;
+}
 a#Kyiv {
   text-decoration: none;
   color: rgb(125, 93, 155);
@@ -128,17 +131,21 @@ img#icon {
   left: 99px;
   font-size: 12px;
 }
-.units a#celsiusSign {
+.units .active {
   text-decoration: none;
   color: black;
   cursor: default;
 }
-.units a#celsiusSign:hover {
+.units .active:hover {
+  text-decoration: none;
+}
+a#celsiusSign {
   text-decoration: none;
 }
 .units a#fahrenheitSign {
   text-decoration: none;
 }
+
 .current_weather_details {
   font-size: 16px;
   font-weight: 100;

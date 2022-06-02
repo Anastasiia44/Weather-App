@@ -68,11 +68,15 @@ function showCurrentLocation(event) {
 }
 function showFahrenheitTemperature(event) {
   event.preventDefault();
+  celsiusSign.classList.remove("active");
+  fahrenheitSign.classList.add("active");
   let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
   document.querySelector("#temp").innerHTML = Math.round(fahrenheitTemp);
 }
 function showCelsiusTemperature(event) {
   event.preventDefault();
+  celsiusSign.classList.add("active");
+  fahrenheitSign.classList.remove("active");
   document.querySelector("#temp").innerHTML = Math.round(celsiusTemperature);
 }
 
