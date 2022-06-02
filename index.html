@@ -3,7 +3,7 @@
   <head>
     <title>Weather App</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/styles.css"/>
+    <link rel="stylesheet" href="src/styles.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -41,98 +41,103 @@
         <div class="app">
           <div class="space_search">
             <form class="float-left" id="city-form">
-              <input type="text" id="city-input" placeholder="Enter a city" autocomplete="off">
-              <input type="submit" id="search-button" class="button" value="Search">
+              <input
+                type="text"
+                id="city-input"
+                placeholder="Enter a city"
+                autocomplete="off"
+              />
+              <input
+                type="submit"
+                id="search-button"
+                class="button"
+                value="Search"
+              />
             </form>
-            <button id="locationButton"> Current </button>
+            <button id="locationButton">Current</button>
           </div>
           <div class="current_weater_info">
-            <div class="current_weather_head" id="currentCity"> Dnipro </div>
-            <div class="current_weather_day" id="now"> Saturday </div>
+            <div class="current_weather_head" id="currentCity">Dnipro</div>
+            <div class="current_weather_day" id="now">Saturday</div>
+            <div class="current_weather_description" id="description">
+              Clouds
+            </div>
           </div>
-        </br>
-      </br>
-    </br>
-    
-            <div class="weather_space">
-              <div class="col-sm-6">
-                <div class="clearfix">
-                  <div class="current_weather_emoji" id="current_weather_emoji">
-                      <i class="fa-solid fa-2x fa-cloud-sun"></i>
-                  </div>
+
+          <div class="weather_space">
+            <div class="col-sm-6">
+              <div class="clearfix">
+                <div class="current_weather_emoji" id="current_weather_emoji">
+                  <i class="fa-solid fa-2x fa-cloud-sun"></i>
+                </div>
                 <div class="current_weather_temp" id="temp">16</div>
-                <span class="special_temp_sign"> °C </span>
+                <span class="units">
+                  °C| <a href="#" id="fahrenheitSign">°F</a></span
+                >
               </div>
             </div>
-              <div class="col-sm-6">
-                <div class="current_weather_details" id="humidity">
+            <div class="col-sm-6">
+              <div class="current_weather_details" id="humidity">
                 Humidity: 37%
               </div>
-              <div class="current_weather_details" id="wind">
-                Wind: 7km/h
-              </div>
-              </div>
+              <div class="current_weather_details" id="wind">Wind: 7km/h</div>
             </div>
           </div>
-          <div class="bottom_line">
-            <div class="col-sm-2">
-              <div class="forecast_day">Sun</div>
-              <div class="forecast_emoji"> 
-                <i class="fa-solid fa-sun"></i>
-               </div>
-              <div class="forecast_temp">
-              20°C
-              </div>
-            </div>
+        </div>
+        <div class="bottom_line">
           <div class="col-sm-2">
-              <div class="forecast_day">Mon</div>
-              <div class="forecast_emoji"> 
-                  <i class="fa-solid fa-cloud-sun"></i>
-              </div>
-              <div class="forecast_temp">
-                17°C
-              </div>
+            <div class="forecast_day">Sun</div>
+            <div class="forecast_emoji">
+              <i class="fa-solid fa-sun"></i>
             </div>
-              <div class="col-sm-2">
-                <div class="forecast_day">Tue</div>
-                <div class="forecast_emoji"> 
-                    <i class="fa-solid fa-cloud-sun"></i>
-                </div>
-                <div class="forecast_temp">
-                  17°C
-                </div>
-              </div>
-              <div class="col-sm-2">
-                  <div class="forecast_day">Wed</div>
-                  <div class="forecast_emoji"> 
-                      <i class="fa-solid fa-sun"></i>
-                  </div>
-                  <div class="forecast_temp">
-                    21°C
-                  </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="forecast_day">Thu</div>
-                <div class="forecast_emoji"> 
-                    <i class="fa-solid fa-sun"></i>
-                </div>
-                <div class="forecast_temp">
-                  22°C
-                </div>
-              </div>
-            </div>
+            <div class="forecast_temp">20°C</div>
           </div>
-          <div class="link-to-gitHub">
-          <a href="https://github.com/Anastasiia44/weather-app" target="_blank" id="gitHubLink">Open-source code</a>
-           <span class="personalName">by Anastasiia Maliuha</span>
+          <div class="col-sm-2">
+            <div class="forecast_day">Mon</div>
+            <div class="forecast_emoji">
+              <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+            <div class="forecast_temp">17°C</div>
+          </div>
+          <div class="col-sm-2">
+            <div class="forecast_day">Tue</div>
+            <div class="forecast_emoji">
+              <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+            <div class="forecast_temp">17°C</div>
+          </div>
+          <div class="col-sm-2">
+            <div class="forecast_day">Wed</div>
+            <div class="forecast_emoji">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <div class="forecast_temp">21°C</div>
+          </div>
+          <div class="col-sm-2">
+            <div class="forecast_day">Thu</div>
+            <div class="forecast_emoji">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <div class="forecast_temp">22°C</div>
+          </div>
         </div>
-        </div>
+      </div>
+      <div class="link-to-gitHub">
+        <a
+          href="https://github.com/Anastasiia44/weather-app"
+          target="_blank"
+          id="gitHubLink"
+          >Open-source code</a
+        >
+        <span class="personalName">by Anastasiia Maliuha</span>
+      </div>
+    </div>
 
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-          crossorigin="anonymous"
-        ></script>
-        <script src="src/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/index.js"></script>
   </body>
 </html>

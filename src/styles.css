@@ -95,15 +95,19 @@ button#locationButton {
   float: right;
   font-size: 20px;
   font-weight: normal;
-  padding-bottom: 20px;
-  margin: 0;
+  margin-right: 40px;
+  margin-bottom: 0;
 }
-
+.space_search {
+  height: 40px;
+}
 .weather_space {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: 10px;
+  margin-left: 30px;
+  height: 200px;
+  padding-top: 100px;
 }
 .current_weather_emoji {
   position: relative;
@@ -114,11 +118,14 @@ button#locationButton {
   left: 50px;
   font-size: 30px;
 }
-.special_temp_sign {
+.units {
   position: relative;
   top: -78px;
-  left: 80px;
-  font-size: 30px;
+  left: 85px;
+  font-size: 12px;
+}
+.units a#fahrenheitSign {
+  text-decoration: none;
 }
 .current_weather_details {
   font-size: 16px;
