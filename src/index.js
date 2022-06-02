@@ -53,6 +53,27 @@ function citySubmit(event) {
   let city = document.querySelector("#city-input").value;
   searchCity(city);
 }
+
+function showKyivTemperature(event) {
+  event.preventDefault();
+  searchCity("Kyiv");
+}
+
+function showLondonTemperature(event) {
+  event.preventDefault();
+  searchCity("London");
+}
+
+function showBerlinTemperature(event) {
+  event.preventDefault();
+  searchCity("Berlin");
+}
+
+function showParisTemperature(event) {
+  event.preventDefault();
+  searchCity("Paris");
+}
+
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -94,4 +115,16 @@ fahrenheitSign.addEventListener("click", showFahrenheitTemperature);
 let celsiusSign = document.querySelector("#celsiusSign");
 celsiusSign.addEventListener("click", showCelsiusTemperature);
 
-searchCity("Kyiv");
+let kyiv = document.querySelector("#Kyiv");
+kyiv.addEventListener("click", showKyivTemperature);
+
+let london = document.querySelector("#London");
+london.addEventListener("click", showLondonTemperature);
+
+let berlin = document.querySelector("#Berlin");
+berlin.addEventListener("click", showBerlinTemperature);
+
+let paris = document.querySelector("#Paris");
+paris.addEventListener("click", showParisTemperature);
+
+searchCity("Dnipro");
