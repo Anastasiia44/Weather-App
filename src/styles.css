@@ -159,6 +159,10 @@ div#humidity {
   flex: 0 0 50%;
   max-width: 50%;
 }
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
 .bottom_line {
   display: flex;
   flex-wrap: wrap;
@@ -169,15 +173,19 @@ div#humidity {
   flex: 0 0 17%;
   max-width: 17%;
 }
+img {
+  width: 40px;
+}
 .forecast_day {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   white-space: nowrap;
 }
-.forecast_emoji {
-  text-align: center;
-  margin: 10px 0 0;
+
+.weather-forecast-temp-min {
+  opacity: 0.6;
 }
+
 .forecast_temp {
   text-align: center;
   font-size: 13px;
