@@ -18,25 +18,43 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-function showForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function showForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="bottom_line">`;
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` 
           <div class="col-sm-2">
-            <div class="forecast_day">${day}</div>
+            <div class="forecast_day">${formatDay(forecastDay.dt)}</div>
             <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
+              src="https://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
               alt="Clouds"
             />
             <div class="forecast_temp"> 
-              <span class="weather-forecast-temp-max"> 20° </span>
-                <span class="weather-forecast-temp-min"> 14° </span> 
+              <span class="weather-forecast-temp-max"> ${Math.round(
+                forecastDay.temp.max
+              )}° </span>
+                <span class="weather-forecast-temp-min"> ${Math.round(
+                  forecastDay.temp.min
+                )}° </span> 
               </div>
           </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -44,6 +62,13 @@ function showForecast() {
 
 let date = document.querySelector("#now");
 date.innerHTML = `${day}, ${hours}:${minutes}`;
+
+function getForecast(coordinates) {
+  let apiKey = "5fac1c82a1b209a04fbd8df775e5cf4b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
 function showWeather(response) {
   console.log(response);
   document.querySelector("#currentCity").innerHTML = response.data.name;
@@ -66,6 +91,8 @@ function showWeather(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].icon);
+
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "5fac1c82a1b209a04fbd8df775e5cf4b";
@@ -111,6 +138,7 @@ function showCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   celsiusSign.classList.remove("active");
@@ -152,5 +180,3 @@ let paris = document.querySelector("#Paris");
 paris.addEventListener("click", showParisTemperature);
 
 searchCity("Dnipro");
-
-showForecast();
