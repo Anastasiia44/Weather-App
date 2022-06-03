@@ -66,11 +66,9 @@ date.innerHTML = `${day}, ${hours}:${minutes}`;
 function getForecast(coordinates) {
   let apiKey = "5fac1c82a1b209a04fbd8df775e5cf4b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(showForecast);
 }
 function showWeather(response) {
-  console.log(response);
   document.querySelector("#currentCity").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
@@ -139,33 +137,11 @@ function showCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  celsiusSign.classList.remove("active");
-  fahrenheitSign.classList.add("active");
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  document.querySelector("#temp").innerHTML = Math.round(fahrenheitTemp);
-}
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusSign.classList.add("active");
-  fahrenheitSign.classList.remove("active");
-  document.querySelector("#temp").innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", citySubmit);
 
 let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", showCurrentLocation);
-
-let fahrenheitSign = document.querySelector("#fahrenheitSign");
-fahrenheitSign.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusSign = document.querySelector("#celsiusSign");
-celsiusSign.addEventListener("click", showCelsiusTemperature);
 
 let kyiv = document.querySelector("#Kyiv");
 kyiv.addEventListener("click", showKyivTemperature);

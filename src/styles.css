@@ -127,23 +127,9 @@ img#icon {
 }
 .units {
   position: relative;
-  top: -110px;
-  left: 99px;
-  font-size: 12px;
-}
-.units .active {
-  text-decoration: none;
-  color: black;
-  cursor: default;
-}
-.units .active:hover {
-  text-decoration: none;
-}
-a#celsiusSign {
-  text-decoration: none;
-}
-.units a#fahrenheitSign {
-  text-decoration: none;
+  top: -107px;
+  left: 104px;
+  font-size: 15px;
 }
 
 .current_weather_details {
