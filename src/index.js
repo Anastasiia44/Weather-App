@@ -18,6 +18,30 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="bottom_line">`;
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+          <div class="col-sm-2">
+            <div class="forecast_day">${day}</div>
+            <img
+              src="https://openweathermap.org/img/wn/04d@2x.png"
+              alt="Clouds"
+            />
+            <div class="forecast_temp"> 
+              <span class="weather-forecast-temp-max"> 20° </span>
+                <span class="weather-forecast-temp-min"> 14° </span> 
+              </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let date = document.querySelector("#now");
 date.innerHTML = `${day}, ${hours}:${minutes}`;
 function showWeather(response) {
@@ -128,3 +152,5 @@ let paris = document.querySelector("#Paris");
 paris.addEventListener("click", showParisTemperature);
 
 searchCity("Dnipro");
+
+showForecast();
